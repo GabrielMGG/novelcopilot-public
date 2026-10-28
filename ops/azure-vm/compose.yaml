@@ -1,0 +1,21 @@
+services:
+  backend:
+    image: ghcr.io/gabrielmgg/novelcopilot-backend:${IMAGE_TAG:-latest}
+    container_name: novelcopilot-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      PORT: "8080"
+      JAVA_TOOL_OPTIONS: >-
+        -Xms128m -Xmx480m -XX:+UseSerialGC -XX:+ExitOnOutOfMemoryError
+    ports:
+      - "127.0.0.1:8080:8080"
+    mem_limit: 768m
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

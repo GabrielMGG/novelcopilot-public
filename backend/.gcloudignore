@@ -1,0 +1,12 @@
+.gcloudignore
+.git
+.gitignore
+.idea
+.vscode
+target
+*.iml
+*.log
+.env
+.env.*
+application-local.properties
+cloud-run.env.yaml

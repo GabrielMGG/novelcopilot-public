@@ -1,0 +1,58 @@
+.transactions-modal {
+  width: min(920px, calc(100vw - 32px));
+}
+
+.transactions-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.transactions-table {
+  width: 100%;
+  min-width: 720px;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.transactions-table th, .transactions-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.transactions-error {
+  color: var(--color-danger);
+}
+
+.transactions-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.transactions-modal :focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 45%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .transactions-modal-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .transactions-modal-footer > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .transactions-modal-footer button {
+    min-height: 42px;
+  }
+}
+
+.transactions-table th {
+  background: var(--color-background-soft);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}

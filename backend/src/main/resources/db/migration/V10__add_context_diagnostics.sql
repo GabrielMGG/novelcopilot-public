@@ -1,0 +1,1 @@
+ALTER TABLE ai_generation_usage ADD COLUMN context_diagnostics TEXT;

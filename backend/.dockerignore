@@ -1,0 +1,16 @@
+.idea/
+.vscode/
+target/
+*.iml
+
+.env
+.env.*
+application-local.properties
+
+*.log
+logs/
+
+Dockerfile*
+README.md
+
+cloud-run.env.yaml

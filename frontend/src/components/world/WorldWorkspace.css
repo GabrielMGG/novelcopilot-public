@@ -1,0 +1,358 @@
+.world-workspace {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 18px;
+  width: 100%;
+  min-height: calc(100vh - 96px);
+}
+
+.world-sidebar,
+.world-editor-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.world-sidebar {
+  padding: 16px;
+}
+
+.world-list-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+
+.world-list-header-top,
+.world-editor-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.world-list-header-top h2,
+.world-editor-header h2 {
+  margin: 0;
+  color: var(--text-main);
+}
+
+.world-list-count {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.world-editor-header p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.world-new-button,
+.world-save-button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent-purple);
+  color: white;
+  padding: 9px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.world-new-button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.world-sidebar-tools {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.world-search-input,
+.world-category-filter,
+.world-field input,
+.world-field select,
+.world-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-editor);
+  color: var(--text-main);
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.world-search-input,
+.world-category-filter {
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.world-state,
+.world-message {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.world-entry-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.world-entry-item {
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-main);
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.world-entry-item:hover,
+.world-entry-item.is-active {
+  background: var(--accent-purple-light);
+}
+
+.world-entry-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--bg-editor);
+  color: var(--accent-purple);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-light);
+}
+
+.world-entry-info {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.world-entry-info strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.world-entry-info small {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+}
+
+.world-editor-panel {
+  padding: 22px;
+  overflow: auto;
+}
+
+.world-editor-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.world-danger-button {
+  border: 0;
+  border-radius: 999px;
+  background: rgba(180, 83, 83, 0.12);
+  color: #b45353;
+  padding: 9px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.world-save-button:disabled,
+.world-danger-button:disabled,
+.world-list-header button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.world-save-button:disabled {
+  background: var(--bg-hover);
+  color: var(--text-muted);
+}
+
+.world-unsaved-badge {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: rgba(217, 119, 6, 0.12);
+  color: #b45309;
+  padding: 5px 9px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.world-metadata-bar {
+  display: grid;
+  grid-template-columns: 180px 160px 160px minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  padding: 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  background: var(--bg-editor);
+}
+
+.world-field {
+  display: grid;
+  gap: 7px;
+}
+
+.world-field span {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.world-content-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.world-field textarea {
+  resize: vertical;
+  line-height: 1.6;
+  min-height: 220px;
+}
+
+.world-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  background: rgba(31, 41, 55, 0.28);
+  backdrop-filter: blur(6px);
+  padding: 24px;
+}
+
+.world-dialog {
+  width: min(420px, 100%);
+  border-radius: 18px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  padding: 22px;
+}
+
+.world-dialog h2 {
+  margin: 0 0 8px;
+  color: var(--text-main);
+  font-size: 1.2rem;
+}
+
+.world-dialog p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.world-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.world-dialog-secondary,
+.world-dialog-danger {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.world-dialog-secondary {
+  background: var(--bg-hover);
+  color: var(--text-main);
+}
+
+.world-dialog-danger {
+  background: #b45353;
+  color: white;
+}
+
+@media (max-width: 1100px) {
+  .world-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .world-workspace > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .world-metadata-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .world-workspace {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .world-metadata-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .world-list-header-top {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .world-editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .world-editor-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .world-editor-actions button {
+    flex: 1;
+    text-align: center;
+  }
+
+  .world-field input,
+  .world-field select,
+  .world-field textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .world-sidebar {
+    padding: 16px;
+  }
+
+  .world-editor-panel {
+    padding: 16px;
+  }
+}

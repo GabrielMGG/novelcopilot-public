@@ -1,0 +1,2 @@
+# Frozen benchmark fixture is hashed byte-for-byte by an automated test.
+/backend/src/main/resources/benchmark/benchmark-final-cases.json text eol=lf
